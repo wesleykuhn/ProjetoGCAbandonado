@@ -1,0 +1,1266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{60A4CE21-8F44-414D-A5D2-28742DAB73FF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>GC</RootNamespace>
+    <AssemblyName>GC</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>ftp://ftp.wesley-k.com/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>true</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://www.wesley-k.com/gc/download/</InstallUrl>
+    <TargetCulture>pt-BR</TargetCulture>
+    <ProductName>Gestor de Comércio</ProductName>
+    <PublisherName>Wesley Kühn</PublisherName>
+    <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>0A6687150BAD0B7AEAA8BA11994EF22654F2609D</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>gc_logo_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>GC.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.5\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Fizzler, Version=1.2.0.0, Culture=neutral, PublicKeyToken=4ebff4844e382110, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fizzler.1.2.0\lib\netstandard2.0\Fizzler.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.11.4.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.11.4\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.1, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.1\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.1.1.11\lib\net46\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.1.11\lib\net46\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MySql.Data, Version=8.0.22.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.22\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NodaTime, Version=2.0.2.0, Culture=neutral, PublicKeyToken=4226afe0d9b296d1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NodaTime.2.0.2\lib\net45\NodaTime.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reflection.4.1.0\lib\net462\System.Reflection.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Reflection.TypeExtensions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reflection.TypeExtensions.4.1.0\lib\net462\System.Reflection.TypeExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Primitives, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.Serialization.Primitives.4.3.0\lib\net46\System.Runtime.Serialization.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.22\lib\net452\Ubiety.Dns.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Zstandard.Net, Version=1.1.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.22\lib\net452\Zstandard.Net.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Components\CMP_BtnAdd.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\CMP_BtnAdd.Designer.cs">
+      <DependentUpon>CMP_BtnAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\CMP_BtnAlter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\CMP_BtnAlter.Designer.cs">
+      <DependentUpon>CMP_BtnAlter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\CMP_BtnDelete.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\CMP_BtnDelete.Designer.cs">
+      <DependentUpon>CMP_BtnDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\CMP_BtnRegular.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\CMP_BtnRegular.Designer.cs">
+      <DependentUpon>CMP_BtnRegular.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\CMP_BtnRegularCrimson.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\CMP_BtnRegularCrimson.Designer.cs">
+      <DependentUpon>CMP_BtnRegularCrimson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\CMP_BtnRegularGreen.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\CMP_BtnRegularGreen.Designer.cs">
+      <DependentUpon>CMP_BtnRegularGreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\CMP_BtnTopClose.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\CMP_BtnTopClose.Designer.cs">
+      <DependentUpon>CMP_BtnTopClose.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\CMP_BtnRegularWhite.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\CMP_BtnRegularWhite.Designer.cs">
+      <DependentUpon>CMP_BtnRegularWhite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\CMP_BtnTopMinimize.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\CMP_BtnTopMinimize.Designer.cs">
+      <DependentUpon>CMP_BtnTopMinimize.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\CMP_BtnTopResize.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\CMP_BtnTopResize.Designer.cs">
+      <DependentUpon>CMP_BtnTopResize.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\CMP_ColorBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\CMP_ColorBox.Designer.cs">
+      <DependentUpon>CMP_ColorBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\CMP_CtlPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\CMP_CtlPanel.Designer.cs">
+      <DependentUpon>CMP_CtlPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\CMP_LoadingCircle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\CMP_LoadingCircle.Designer.cs">
+      <DependentUpon>CMP_LoadingCircle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Bases\FRM_Default.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Bases\FRM_Default.Designer.cs">
+      <DependentUpon>FRM_Default.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Bases\FRM_Full.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Bases\FRM_Full.Designer.cs">
+      <DependentUpon>FRM_Full.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Components\CMP_RequestLittleBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Components\CMP_RequestLittleBox.Designer.cs">
+      <DependentUpon>CMP_RequestLittleBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Controls\USC_Configuration.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Controls\USC_Configuration.Designer.cs">
+      <DependentUpon>USC_Configuration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Controls\USC_Costumers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Controls\USC_Costumers.Designer.cs">
+      <DependentUpon>USC_Costumers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Controls\USC_Home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Controls\USC_Home.Designer.cs">
+      <DependentUpon>USC_Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Controls\USC_Jobs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Controls\USC_Jobs.Designer.cs">
+      <DependentUpon>USC_Jobs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Controls\USC_Requests.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Controls\USC_Requests.Designer.cs">
+      <DependentUpon>USC_Requests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Controls\USC_Schedule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Controls\USC_Schedule.Designer.cs">
+      <DependentUpon>USC_Schedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Controls\USC_Warranties.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Controls\USC_Warranties.Designer.cs">
+      <DependentUpon>USC_Warranties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Configuration\FRM_AccountTypeChange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Configuration\FRM_AccountTypeChange.Designer.cs">
+      <DependentUpon>FRM_AccountTypeChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Configuration\FRM_AlterUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Configuration\FRM_AlterUser.Designer.cs">
+      <DependentUpon>FRM_AlterUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Configuration\FRM_SendFeedback.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Configuration\FRM_SendFeedback.Designer.cs">
+      <DependentUpon>FRM_SendFeedback.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Costumers\FRM_AlterCostumer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Costumers\FRM_AlterCostumer.Designer.cs">
+      <DependentUpon>FRM_AlterCostumer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Costumers\FRM_EditDebt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Costumers\FRM_EditDebt.Designer.cs">
+      <DependentUpon>FRM_EditDebt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Costumers\FRM_EditDiscounts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Costumers\FRM_EditDiscounts.Designer.cs">
+      <DependentUpon>FRM_EditDiscounts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Costumers\FRM_DetailsCostumer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Costumers\FRM_DetailsCostumer.Designer.cs">
+      <DependentUpon>FRM_DetailsCostumer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Costumers\FRM_NewCostumer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Costumers\FRM_NewCostumer.Designer.cs">
+      <DependentUpon>FRM_NewCostumer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Costumers\FRM_SearchOptionsCostumers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Costumers\FRM_SearchOptionsCostumers.Designer.cs">
+      <DependentUpon>FRM_SearchOptionsCostumers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Jobs\FRM_AlterJob.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Jobs\FRM_AlterJob.Designer.cs">
+      <DependentUpon>FRM_AlterJob.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Jobs\FRM_NewJob.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Jobs\FRM_NewJob.Designer.cs">
+      <DependentUpon>FRM_NewJob.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Jobs\FRM_SearchOptionsJobs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Jobs\FRM_SearchOptionsJobs.Designer.cs">
+      <DependentUpon>FRM_SearchOptionsJobs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Main\Components\CMP_AdminMessageSubject.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Main\Components\CMP_AdminMessageSubject.Designer.cs">
+      <DependentUpon>CMP_AdminMessageSubject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Main\FRM_AdminMessages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Main\FRM_AdminMessages.Designer.cs">
+      <DependentUpon>FRM_AdminMessages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Main\FRM_EditCnpj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Main\FRM_EditCnpj.Designer.cs">
+      <DependentUpon>FRM_EditCnpj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Main\FRM_MemoryUsage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Main\FRM_MemoryUsage.Designer.cs">
+      <DependentUpon>FRM_MemoryUsage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Products\FRM_AddLot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Products\FRM_AddLot.Designer.cs">
+      <DependentUpon>FRM_AddLot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Products\FRM_CriticalStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Products\FRM_CriticalStock.Designer.cs">
+      <DependentUpon>FRM_CriticalStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Products\FRM_EditLot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Products\FRM_EditLot.Designer.cs">
+      <DependentUpon>FRM_EditLot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Products\FRM_EditStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Products\FRM_EditStock.Designer.cs">
+      <DependentUpon>FRM_EditStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Products\FRM_CriticalExpiration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Products\FRM_CriticalExpiration.Designer.cs">
+      <DependentUpon>FRM_CriticalExpiration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Reminders\frmModal_DetailsReminder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Reminders\frmModal_DetailsReminder.Designer.cs">
+      <DependentUpon>frmModal_DetailsReminder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Reminders\frmModal_NewOrAlterReminder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Reminders\frmModal_NewOrAlterReminder.Designer.cs">
+      <DependentUpon>frmModal_NewOrAlterReminder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Reminders\SubModals\frmModal_NewOrAlterReminder_HourAndMinutesSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Reminders\SubModals\frmModal_NewOrAlterReminder_HourAndMinutesSelector.Designer.cs">
+      <DependentUpon>frmModal_NewOrAlterReminder_HourAndMinutesSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Requests\FRM_AlterRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Requests\FRM_AlterRequest.Designer.cs">
+      <DependentUpon>FRM_AlterRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Requests\FRM_DetailsRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Requests\FRM_DetailsRequest.Designer.cs">
+      <DependentUpon>FRM_DetailsRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Requests\FRM_NewRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Requests\FRM_NewRequest.Designer.cs">
+      <DependentUpon>FRM_NewRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Requests\SubModals\NewRequest\FRM_CostumersList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Requests\SubModals\NewRequest\FRM_CostumersList.Designer.cs">
+      <DependentUpon>FRM_CostumersList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Requests\SubModals\NewRequest\FRM_EditAdditions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Requests\SubModals\NewRequest\FRM_EditAdditions.Designer.cs">
+      <DependentUpon>FRM_EditAdditions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Requests\SubModals\NewRequest\FRM_EditDiscounts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Requests\SubModals\NewRequest\FRM_EditDiscounts.Designer.cs">
+      <DependentUpon>FRM_EditDiscounts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Requests\SubModals\NewRequest\FRM_JobsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Requests\SubModals\NewRequest\FRM_JobsList.Designer.cs">
+      <DependentUpon>FRM_JobsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Requests\SubModals\NewRequest\FRM_OnFinishDiscounts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Requests\SubModals\NewRequest\FRM_OnFinishDiscounts.Designer.cs">
+      <DependentUpon>FRM_OnFinishDiscounts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Requests\SubModals\NewRequest\FRM_ProductSeparatorHelper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Requests\SubModals\NewRequest\FRM_ProductSeparatorHelper.Designer.cs">
+      <DependentUpon>FRM_ProductSeparatorHelper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Requests\SubModals\NewRequest\FRM_ProductsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Requests\SubModals\NewRequest\FRM_ProductsList.Designer.cs">
+      <DependentUpon>FRM_ProductsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Requests\SubModals\NewRequest\FRM_ProductsListQuantitySelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Requests\SubModals\NewRequest\FRM_ProductsListQuantitySelector.Designer.cs">
+      <DependentUpon>FRM_ProductsListQuantitySelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Requests\FRM_SearchOptionsRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Requests\FRM_SearchOptionsRequest.Designer.cs">
+      <DependentUpon>FRM_SearchOptionsRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Requests\FRM_SendRequestInfoToEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Requests\FRM_SendRequestInfoToEmail.Designer.cs">
+      <DependentUpon>FRM_SendRequestInfoToEmail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Stats\FRM_ProductsConsumption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Stats\FRM_ProductsConsumption.Designer.cs">
+      <DependentUpon>FRM_ProductsConsumption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Suppliers\FRM_AlterSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Suppliers\FRM_AlterSupplier.Designer.cs">
+      <DependentUpon>FRM_AlterSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Suppliers\FRM_DetailsSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Suppliers\FRM_DetailsSupplier.Designer.cs">
+      <DependentUpon>FRM_DetailsSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Suppliers\FRM_NewSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Suppliers\FRM_NewSupplier.Designer.cs">
+      <DependentUpon>FRM_NewSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Suppliers\FRM_SearchOptionsSuppliers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Suppliers\FRM_SearchOptionsSuppliers.Designer.cs">
+      <DependentUpon>FRM_SearchOptionsSuppliers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Warranties\FRM_AlterWarranty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Warranties\FRM_AlterWarranty.Designer.cs">
+      <DependentUpon>FRM_AlterWarranty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Warranties\FRM_DetailsWarranty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Warranties\FRM_DetailsWarranty.Designer.cs">
+      <DependentUpon>FRM_DetailsWarranty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Warranties\FRM_NewWarranty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Warranties\FRM_NewWarranty.Designer.cs">
+      <DependentUpon>FRM_NewWarranty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Warranties\FRM_SearchOptionsWarranties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Warranties\FRM_SearchOptionsWarranties.Designer.cs">
+      <DependentUpon>FRM_SearchOptionsWarranties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Warranties\FRM_WarrantyEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Warranties\FRM_WarrantyEmail.Designer.cs">
+      <DependentUpon>FRM_WarrantyEmail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalModals\FRM_Message.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GlobalModals\FRM_Message.Designer.cs">
+      <DependentUpon>FRM_Message.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalModals\FRM_MessageAndOK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GlobalModals\FRM_MessageAndOK.Designer.cs">
+      <DependentUpon>FRM_MessageAndOK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalModals\FRM_MessageAndProgressBar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GlobalModals\FRM_MessageAndProgressBar.Designer.cs">
+      <DependentUpon>FRM_MessageAndProgressBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalModals\FRM_MiniLoad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GlobalModals\FRM_MiniLoad.Designer.cs">
+      <DependentUpon>FRM_MiniLoad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalModals\FRM_RetryAndCancelButton.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GlobalModals\FRM_RetryAndCancelButton.Designer.cs">
+      <DependentUpon>FRM_RetryAndCancelButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Library\Checkers\Structs.cs" />
+    <Compile Include="Library\Checkers\Variables.cs" />
+    <Compile Include="Library\Collectors\AppGuid.cs" />
+    <Compile Include="Library\Converters\Data.cs" />
+    <Compile Include="Library\Files\Control.cs" />
+    <Compile Include="Library\Files\Open.cs" />
+    <Compile Include="Library\Objects\FragileData.cs" />
+    <Compile Include="Library\Informations\DataBase.cs" />
+    <Compile Include="Library\Informations\Directories.cs" />
+    <Compile Include="Library\Informations\Chars.cs" />
+    <Compile Include="Library\Objects\Cep.cs" />
+    <Compile Include="Library\Objects\Reminder.cs" />
+    <Compile Include="Library\Objects\Warranty.cs" />
+    <Compile Include="Library\Outputs\Pdf.cs" />
+    <Compile Include="Library\Relations\Id_Double.cs" />
+    <Compile Include="Library\Relations\IntWithDouble.cs" />
+    <Compile Include="Library\Relations\IntWithInt.cs" />
+    <Compile Include="Library\Objects\SalesRecord.cs" />
+    <Compile Include="Library\Objects\DayRecord.cs" />
+    <Compile Include="Library\Informations\KeyCodes.cs" />
+    <Compile Include="Library\Objects\SubObjects\SalesRecord\Costumers.cs" />
+    <Compile Include="Library\Objects\SubObjects\SalesRecord\Jobs.cs" />
+    <Compile Include="Library\Objects\SubObjects\SalesRecord\Products.cs" />
+    <Compile Include="Library\Objects\Announce.cs" />
+    <Compile Include="Library\Objects\Configuration.cs" />
+    <Compile Include="Library\Objects\CompanyInformation.cs" />
+    <Compile Include="Library\Objects\SubObjects\Request\Request_Jobs.cs" />
+    <Compile Include="Library\Objects\SubObjects\Product\Lot.cs" />
+    <Compile Include="Library\Routines\AwaysActive.cs" />
+    <Compile Include="Library\Routines\Fortnight.cs" />
+    <Compile Include="Library\Sounds\Click.cs" />
+    <Compile Include="Library\Style\ListViews.cs" />
+    <Compile Include="Library\Sync\DatabaseToLocalFile.cs" />
+    <Compile Include="Library\Web\HttpRequest.cs" />
+    <Compile Include="Library\Style\Images.cs" />
+    <Compile Include="Library\Outputs\Printer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Library\Files\SeekFor.cs" />
+    <Compile Include="Library\Sounds\Speech.cs" />
+    <Compile Include="Library\Folders\StartupCheckIn.cs" />
+    <Compile Include="Library\Style\ColorsPalette.cs" />
+    <Compile Include="Library\Objects\AdminMessage.cs" />
+    <Compile Include="Library\Entities\Costumer.cs" />
+    <Compile Include="Library\Objects\Job.cs" />
+    <Compile Include="Library\Objects\SubObjects\Request\Request_Products.cs" />
+    <Compile Include="Library\Objects\Request.cs" />
+    <Compile Include="Library\Files\LoginData.cs" />
+    <Compile Include="Forms\ForgotPassword\FRM_ForgotPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ForgotPassword\FRM_ForgotPassword.Designer.cs">
+      <DependentUpon>FRM_ForgotPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Controls\USC_Products.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Controls\USC_Products.Designer.cs">
+      <DependentUpon>USC_Products.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Controls\USC_Suppliers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Controls\USC_Suppliers.Designer.cs">
+      <DependentUpon>USC_Suppliers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Products\FRM_AlterProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Products\FRM_AlterProduct.Designer.cs">
+      <DependentUpon>FRM_AlterProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Products\FRM_DetailsProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Products\FRM_DetailsProduct.Designer.cs">
+      <DependentUpon>FRM_DetailsProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Products\FRM_NewProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Products\FRM_NewProduct.Designer.cs">
+      <DependentUpon>FRM_NewProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Products\FRM_SearchOptionsProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Modals\Products\FRM_SearchOptionsProduct.Designer.cs">
+      <DependentUpon>FRM_SearchOptionsProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LoadingScreen\FRM_LoadingScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LoadingScreen\FRM_LoadingScreen.Designer.cs">
+      <DependentUpon>FRM_LoadingScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Login\FRM_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Login\FRM_Login.Designer.cs">
+      <DependentUpon>FRM_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NewAccount\FRM_NewAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NewAccount\FRM_NewAccount.Designer.cs">
+      <DependentUpon>FRM_NewAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Library\Generators\Code.cs" />
+    <Compile Include="Library\Database\MySqlNonQuery.cs" />
+    <Compile Include="Library\Database\MySqlReader.cs" />
+    <Compile Include="Library\Web\Email.cs" />
+    <Compile Include="Library\Errors\Care.cs" />
+    <Compile Include="Library\GlobalVariables.cs" />
+    <Compile Include="Library\Collectors\MacNumber.cs" />
+    <Compile Include="Library\Objects\Product.cs" />
+    <Compile Include="Library\Objects\SubObjects\Product\Supplier.cs" />
+    <Compile Include="Library\Translators\Serialization.cs" />
+    <Compile Include="Library\Auth\Token.cs" />
+    <Compile Include="Library\Entities\User.cs" />
+    <Compile Include="Forms\Main\Controls\USC_Stats.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Controls\USC_Stats.Designer.cs">
+      <DependentUpon>USC_Stats.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\FRM_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\FRM_Main.Designer.cs">
+      <DependentUpon>FRM_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalModals\FRM_Confirmation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GlobalModals\FRM_Confirmation.Designer.cs">
+      <DependentUpon>FRM_Confirmation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Library\Style\Labels.cs" />
+    <Compile Include="Library\Style\GraphicsExtension.cs" />
+    <Compile Include="Library\Style\Render.cs" />
+    <Compile Include="Library\Style\Rectangles.cs" />
+    <Compile Include="Library\Checkers\OperationalSystem.cs" />
+    <Compile Include="Library\Translators\ListViewToObject.cs" />
+    <Compile Include="Library\Translators\ObjectToDetailLabel.cs" />
+    <Compile Include="Library\Translators\ObjectToListView.cs" />
+    <Compile Include="Library\Translators\FieldsToObject.cs" />
+    <Compile Include="Library\Translators\ObjectToSQL.cs" />
+    <Compile Include="Library\Translators\SqlToObject.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Components\CMP_BtnAdd.resx">
+      <DependentUpon>CMP_BtnAdd.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\CMP_ColorBox.resx">
+      <DependentUpon>CMP_ColorBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\CMP_LoadingCircle.resx">
+      <DependentUpon>CMP_LoadingCircle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Bases\FRM_Default.resx">
+      <DependentUpon>FRM_Default.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Bases\FRM_Full.resx">
+      <DependentUpon>FRM_Full.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ForgotPassword\FRM_ForgotPassword.resx">
+      <DependentUpon>FRM_ForgotPassword.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Components\CMP_RequestLittleBox.resx">
+      <DependentUpon>CMP_RequestLittleBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Controls\USC_Configuration.resx">
+      <DependentUpon>USC_Configuration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Controls\USC_Costumers.resx">
+      <DependentUpon>USC_Costumers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Controls\USC_Home.resx">
+      <DependentUpon>USC_Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Controls\USC_Jobs.resx">
+      <DependentUpon>USC_Jobs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Controls\USC_Products.resx">
+      <DependentUpon>USC_Products.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Controls\USC_Requests.resx">
+      <DependentUpon>USC_Requests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Controls\USC_Schedule.resx">
+      <DependentUpon>USC_Schedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Controls\USC_Suppliers.resx">
+      <DependentUpon>USC_Suppliers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Controls\USC_Warranties.resx">
+      <DependentUpon>USC_Warranties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Configuration\FRM_AccountTypeChange.resx">
+      <DependentUpon>FRM_AccountTypeChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Configuration\FRM_AlterUser.resx">
+      <DependentUpon>FRM_AlterUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Configuration\FRM_SendFeedback.resx">
+      <DependentUpon>FRM_SendFeedback.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Costumers\FRM_AlterCostumer.resx">
+      <DependentUpon>FRM_AlterCostumer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Costumers\FRM_EditDebt.resx">
+      <DependentUpon>FRM_EditDebt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Costumers\FRM_EditDiscounts.resx">
+      <DependentUpon>FRM_EditDiscounts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Costumers\FRM_DetailsCostumer.resx">
+      <DependentUpon>FRM_DetailsCostumer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Costumers\FRM_NewCostumer.resx">
+      <DependentUpon>FRM_NewCostumer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Costumers\FRM_SearchOptionsCostumers.resx">
+      <DependentUpon>FRM_SearchOptionsCostumers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Jobs\FRM_AlterJob.resx">
+      <DependentUpon>FRM_AlterJob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Jobs\FRM_NewJob.resx">
+      <DependentUpon>FRM_NewJob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Jobs\FRM_SearchOptionsJobs.resx">
+      <DependentUpon>FRM_SearchOptionsJobs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Main\Components\CMP_AdminMessageSubject.resx">
+      <DependentUpon>CMP_AdminMessageSubject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Main\FRM_AdminMessages.resx">
+      <DependentUpon>FRM_AdminMessages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Main\FRM_EditCnpj.resx">
+      <DependentUpon>FRM_EditCnpj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Main\FRM_MemoryUsage.resx">
+      <DependentUpon>FRM_MemoryUsage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Products\FRM_AddLot.resx">
+      <DependentUpon>FRM_AddLot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Products\FRM_CriticalStock.resx">
+      <DependentUpon>FRM_CriticalStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Products\FRM_AlterProduct.resx">
+      <DependentUpon>FRM_AlterProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Products\FRM_DetailsProduct.resx">
+      <DependentUpon>FRM_DetailsProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Products\FRM_EditLot.resx">
+      <DependentUpon>FRM_EditLot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Products\FRM_EditStock.resx">
+      <DependentUpon>FRM_EditStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Products\FRM_CriticalExpiration.resx">
+      <DependentUpon>FRM_CriticalExpiration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Products\FRM_NewProduct.resx">
+      <DependentUpon>FRM_NewProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Products\FRM_SearchOptionsProduct.resx">
+      <DependentUpon>FRM_SearchOptionsProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LoadingScreen\FRM_LoadingScreen.resx">
+      <DependentUpon>FRM_LoadingScreen.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Login\FRM_Login.resx">
+      <DependentUpon>FRM_Login.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Reminders\frmModal_DetailsReminder.resx">
+      <DependentUpon>frmModal_DetailsReminder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Reminders\frmModal_NewOrAlterReminder.resx">
+      <DependentUpon>frmModal_NewOrAlterReminder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Reminders\SubModals\frmModal_NewOrAlterReminder_HourAndMinutesSelector.resx">
+      <DependentUpon>frmModal_NewOrAlterReminder_HourAndMinutesSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Requests\FRM_AlterRequest.resx">
+      <DependentUpon>FRM_AlterRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Requests\FRM_DetailsRequest.resx">
+      <DependentUpon>FRM_DetailsRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Requests\FRM_NewRequest.resx">
+      <DependentUpon>FRM_NewRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Requests\SubModals\NewRequest\FRM_CostumersList.resx">
+      <DependentUpon>FRM_CostumersList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Requests\SubModals\NewRequest\FRM_EditAdditions.resx">
+      <DependentUpon>FRM_EditAdditions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Requests\SubModals\NewRequest\FRM_EditDiscounts.resx">
+      <DependentUpon>FRM_EditDiscounts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Requests\SubModals\NewRequest\FRM_JobsList.resx">
+      <DependentUpon>FRM_JobsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Requests\SubModals\NewRequest\FRM_OnFinishDiscounts.resx">
+      <DependentUpon>FRM_OnFinishDiscounts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Requests\SubModals\NewRequest\FRM_ProductSeparatorHelper.resx">
+      <DependentUpon>FRM_ProductSeparatorHelper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Requests\SubModals\NewRequest\FRM_ProductsList.resx">
+      <DependentUpon>FRM_ProductsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Requests\SubModals\NewRequest\FRM_ProductsListQuantitySelector.resx">
+      <DependentUpon>FRM_ProductsListQuantitySelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Requests\FRM_SearchOptionsRequest.resx">
+      <DependentUpon>FRM_SearchOptionsRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Requests\FRM_SendRequestInfoToEmail.resx">
+      <DependentUpon>FRM_SendRequestInfoToEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Stats\FRM_ProductsConsumption.resx">
+      <DependentUpon>FRM_ProductsConsumption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Suppliers\FRM_AlterSupplier.resx">
+      <DependentUpon>FRM_AlterSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Suppliers\FRM_DetailsSupplier.resx">
+      <DependentUpon>FRM_DetailsSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Suppliers\FRM_NewSupplier.resx">
+      <DependentUpon>FRM_NewSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Suppliers\FRM_SearchOptionsSuppliers.resx">
+      <DependentUpon>FRM_SearchOptionsSuppliers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Warranties\FRM_AlterWarranty.resx">
+      <DependentUpon>FRM_AlterWarranty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Warranties\FRM_DetailsWarranty.resx">
+      <DependentUpon>FRM_DetailsWarranty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Warranties\FRM_NewWarranty.resx">
+      <DependentUpon>FRM_NewWarranty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Warranties\FRM_SearchOptionsWarranties.resx">
+      <DependentUpon>FRM_SearchOptionsWarranties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Modals\Warranties\FRM_WarrantyEmail.resx">
+      <DependentUpon>FRM_WarrantyEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NewAccount\FRM_NewAccount.resx">
+      <DependentUpon>FRM_NewAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Controls\USC_Stats.resx">
+      <DependentUpon>USC_Stats.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\FRM_Main.resx">
+      <DependentUpon>FRM_Main.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlobalModals\FRM_Confirmation.resx">
+      <DependentUpon>FRM_Confirmation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlobalModals\FRM_Message.resx">
+      <DependentUpon>FRM_Message.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlobalModals\FRM_MessageAndOK.resx">
+      <DependentUpon>FRM_MessageAndOK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlobalModals\FRM_MessageAndProgressBar.resx">
+      <DependentUpon>FRM_MessageAndProgressBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlobalModals\FRM_MiniLoad.resx">
+      <DependentUpon>FRM_MiniLoad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlobalModals\FRM_RetryAndCancelButton.resx">
+      <DependentUpon>FRM_RetryAndCancelButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 e x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Style\Modals\style_modal_217_217_217_365x85.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Style\Modals\style_modal_217_217_217_397x165.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Style\Modals\style_modal_217_217_217_419x348.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Style\Modals\style_modal_217_217_217_626x70.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Style\Modals\style_modal_44_44_44_200x75.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Style\Modals\style_modal_217_217_217_724x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Style\Modals\style_modal_217_217_217_724x72.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Style\Modals\style_modal_217_217_217_946 x 282.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Style\Modals\style_modal_danger_250x110.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Style\Modals\style_modal_green_250x110.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Style\Modals\style_modal_info_250x110.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Style\Modals\style_modal_warning_250x110.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Style\Modals\style_modal_180_180_180_331x235.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Style\Modals\style_modal_180_180_180_645x235.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Style\Modals\style_modal_180_180_180_984x238.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Style\Modals\style_modal_217_217_217_266x140.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Style\Modals\style_modal_217_217_217_476x140.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Style\Modals\style_modal_217_217_217_776x151.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Style\Modals\style_modal_217_217_217_946x282.pn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Style\Modals\style_modal_217_217_217_1000x494.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Style\Modals\style_modal_danger_254x114.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Style\Modals\style_modal_green_254x114.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Style\Modals\style_modal_info_254x114.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Style\Modals\style_modal_warning_254x114.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Icons\icon_not_on_cloud.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Style\Textures\style_texture_darkgrass_974x515.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Style\Textures\style_texture_darkgrass_245x67.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Style\Textures\style_texture_180_180_180_400x60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Style\Textures\style_texture_pool_blue_64x23.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Icons\icon_entrega_30x30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Icons\icon_lapis_30x30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Icons\icon_lixeira_30x30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Icons\icon_mais_30x30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Icons\icon_menumostrar_40x40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Icons\Icon_right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Icons\icon_whatsapp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Icons\icon_perfil_mengravata_100x100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Icons\icon_perfil_menpadrao_100x100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Icons\icon_perfil_woman_100x100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Icons\icon_three_points.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Icons\icon_cadeado_40x40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Icons\icon_cancelar_30x30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Icons\icon_desligar_20x20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Icons\icon_voltar_30x30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Icons\icon_certo_30x30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Icons\icon_feedback.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="gc_logo_icon.ico" />
+    <None Include="Properties\Icons\icon_warranties_40x40.png" />
+    <None Include="Properties\Icons\icon_stats_40x40.png" />
+    <None Include="Properties\Icons\icon_requests_40x40.png" />
+    <None Include="Properties\Icons\icon_prods_40x40.png" />
+    <None Include="Properties\Icons\icon_jobs_40x40.png" />
+    <None Include="Properties\Icons\icon_costumers_40x40.png" />
+    <None Include="Properties\Icons\icon_config_40x40.png" />
+    <None Include="Properties\Icons\icon_calendario_40x40.png" />
+    <None Include="Properties\Icons\icon_folder_38_26.png" />
+    <None Include="Properties\Sounds\sound_click.wav" />
+    <None Include="Properties\Icons\icon_redimensionar_18x18.png" />
+    <None Include="Properties\Icons\icon_maximizar_18x18.png" />
+    <None Include="Properties\Icons\icon_fechar3_22x20.png" />
+    <None Include="Properties\Icons\icon_minimizar_18x18.png" />
+    <None Include="Properties\Icons\icon_gc_logo_128x128.png" />
+    <None Include="Properties\Icons\icon_Kuhnper_logo_128x128.png" />
+    <None Include="Properties\Icons\icon_new_message_30x30.png" />
+    <None Include="Properties\Icons\icon_message_30x30.png" />
+    <None Include="Properties\Icons\icon_home_40x40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KuhnperBase\KuhnperBase\KuhnperBase.csproj">
+      <Project>{435988e1-5751-43a5-87f7-0a7ab30f834b}</Project>
+      <Name>KuhnperBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KuhnperBase\KuhnperUpdater\KuhnperUpdater.csproj">
+      <Project>{e099236d-3fc2-457c-bb5a-5ee4074c0b0c}</Project>
+      <Name>KuhnperUpdater</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\System.Windows.Forms.Calendar\System.Windows.Forms.Calendar.csproj">
+      <Project>{25649F08-3046-4891-ADB8-7EA787B57063}</Project>
+      <Name>System.Windows.Forms.Calendar</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
